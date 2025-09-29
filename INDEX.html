@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Spotify-like Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <header>
+        <h1>MyMusic</h1>
+      </header>
+      <nav>
+        <div class="item">Home</div>
+        <div class="item">Search</div>
+        <div class="item">Your Library</div>
+      </nav>
+
+      <div style="margin-top:18px;color:var(--muted);font-size:13px">Playlists</div>
+      <div style="margin-top:8px">
+        <div class="item">Liked Songs</div>
+        <div class="item">Chill</div>
+        <div class="item">Workout</div>
+      </div>
+    </aside>
+
+    <main>
+      <div class="top">
+        <div>
+          <h2 style="margin:0;font-size:22px">Discover</h2>
+          <div style="color:var(--muted);font-size:13px;margin-top:6px">Play something nice</div>
+        </div>
+        <div class="search">
+          <input id="search" placeholder="Search songs or artists" />
+          <div style="color:var(--muted)">divya</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section>
+          <div class="card">
+            <div class="nowplaying">
+              <img id="cover" class="cover" src="" alt="cover" />
+              <div class="meta">
+                <h2 id="title">—</h2>
+                <p id="artist">—</p>
+
+                <div class="controls">
+                  <button id="shuffle" class="btn">Shuffle</button>
+                  <button id="prev" class="btn">⏮</button>
+                  <button id="play" class="btn play">▶</button>
+                  <button id="next" class="btn">⏭</button>
+                  <button id="repeat" class="btn">Repeat</button>
+                </div>
+
+                <div class="progress-wrap">
+                  <div class="time-row"><span id="curtime">0:00</span><span id="duration">0:00</span></div>
+                  <div id="progress" class="progress"><div class="bar"></div></div>
+                </div>
+
+                <div style="display:flex;gap:12px;align-items:center;justify-content:center;margin-top:12px">
+                  <label style="font-size:13px;color:var(--muted)">Vol</label>
+                  <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" />
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="card queue">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+              <div style="color:var(--muted)">Top results</div>
+              <div id="count" style="font-size:13px;color:var(--muted)">0 songs</div>
+            </div>
+
+            <div id="list" class="list"></div>
+          </div>
+        </section>
+
+        <aside>
+          <div class="card">
+            <div style="font-size:14px;margin-bottom:8px;color:var(--muted)">Queue</div>
+            <div id="queueList" class="list"></div>
+          </div>
+        </aside>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="player">
+    <div class="player-inner">
+      <div class="small-meta">
+        <img id="mini-cover" src="" alt="mini" />
+        <div>
+          <div id="mini-title" class="t">—</div>
+          <div id="mini-artist" class="a">—</div>
+        </div>
+      </div>
+
+      <div class="controls-compact">
+        <button id="p-prev" class="btn">⏮</button>
+        <button id="p-play" class="btn play">▶</button>
+        <button id="p-next" class="btn">⏭</button>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px">
+        <div id="mini-time" style="font-size:13px;color:var(--muted)">0:00 / 0:00</div>
+        <input id="mini-vol" type="range" min="0" max="1" step="0.01" value="0.8" />
+      </div>
+    </div>
+  </footer>
+
+  <audio id="audio"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
